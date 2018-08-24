@@ -1,0 +1,70 @@
+﻿<Window x:Class="MariEtFemme.View.InvoiceTool"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MariEtFemme.View"
+        mc:Ignorable="d"
+        Title="Gerenciamento de Notas Fiscais" Height="500" Width="500" WindowStyle="None" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" BorderBrush="LightGray" BorderThickness="1" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FFE2DEDE"/>
+            <GradientStop Color="#FF666666" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid Margin="0,0,0,0">        
+
+        <Grid Margin="0,50,0,0" HorizontalAlignment="Right" Width="80">
+            <Button x:Name="btnCancel" Style="{StaticResource FlatCancelButton}" Margin="0,80,10,0" VerticalAlignment="Top" Height="60" Click="btnCancel_Click" HorizontalAlignment="Right" Width="60" ToolTip="Cancela a ação" TabIndex="4" Cursor="Hand"/>
+            <Button x:Name="btnApply" Style="{StaticResource FlatApplyButton}" Margin="0,0,10,0" Click="btnApply_Click" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Width="60" ToolTip="Confimar a ação" TabIndex="5" Cursor="Hand"/>
+            <Button x:Name="btnRemove" Style="{StaticResource FlatRemoveButton}" Margin="0,160,10,0" Visibility="Visible" IsEnabled="False" Click="btnRemove_Click" TabIndex="4" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Top" ToolTip="Remove o usuário selecionado" Cursor="Hand"/>
+            <Button x:Name="btnEdit" Style="{StaticResource FlatEditButton}" Margin="0,80,10,0" Visibility="Visible" IsEnabled="False" Click="btnEdit_Click" TabIndex="3" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Top" ToolTip="Edita o usuário selecionado" Cursor="Hand"/>
+            <Button x:Name="btnNew" Style="{StaticResource FlatAddButton}" Margin="0,0,10,0" Click="btnNew_Click" TabIndex="2" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Top" ToolTip="Adiciona novo usuário" Cursor="Hand"/>
+        </Grid>
+
+        <Grid Margin="0,0,0,0" Height="50" VerticalAlignment="Top">
+            <Button Style="{StaticResource FlatCloseButton}" x:Name="btnClose" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" Width="20" ToolTip="Fechar" TabIndex="4" Cursor="Hand" Click="btnClose_Click" Opacity="0.8"/>
+            <Label x:Name="lblTitle" Content="Gerenciamento de Notas Fiscais" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Opacity="0.8"/>
+        </Grid>
+
+        <Grid Margin="2,50,80,10" Background="White">
+            <Label x:Name="lblInvoice" Content="Número da Nota:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0"/>
+            <TextBox x:Name="txtInvoice" Height="25" Margin="105,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="105" FontSize="14" MaxLength="10" MaxLines="1"/>
+            <Label x:Name="lblFilial" Content="Filial:" HorizontalAlignment="Left" Margin="0,55,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cbFilial" Margin="105,55,5,0" VerticalAlignment="Top" Height="25" FontSize="14"/>
+            <Label x:Name="lblProvider" Content="Fornecedor:" HorizontalAlignment="Left" Margin="0,105,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cbProvider" Margin="105,105,5,0" VerticalAlignment="Top" Height="25" FontSize="14"/>
+            <Label x:Name="lblStuff" Content="Produto:" HorizontalAlignment="Left" Margin="0,155,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cbStuff" Margin="105,155,5,0" VerticalAlignment="Top" Height="25" SelectionChanged="cbStuff_SelectionChanged" FontSize="14"/>
+            <Label x:Name="lblStuffQt" Content="Qtde.:" Margin="0,190,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40"/>
+            <TextBox x:Name="txtStuffQt" Height="25" Margin="105,190,251,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" FontSize="14" MaxLength="15" MaxLines="1" TextChanged="txtStuffQt_TextChanged"/>
+            <Label x:Name="lblUn" Margin="0,190,205,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Height="25"/>
+            <Label x:Name="lblUnitaryValue" Content="Valor Unitário:" HorizontalAlignment="Left" Margin="220,190,0,0" VerticalAlignment="Top" Height="25"/>
+            <TextBox x:Name="txtUnitaryValue" HorizontalAlignment="Right" Height="25" Margin="0,190,5,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" MaxLength="10" MaxLines="1" FontSize="14"/>
+            <Button x:Name="btnEditStuff" Content="Editar" HorizontalAlignment="Left" Margin="245,220,0,0" VerticalAlignment="Top" Width="75" Click="btnEditStuff_Click"/>
+            <Button x:Name="btnAddStuff" Content="Adicionar" Margin="327,220,5,0" VerticalAlignment="Top" Click="btnAddStuff_Click"/>
+            <Button x:Name="btnRemoveStuff" Content="Remover" HorizontalAlignment="Left" Margin="165,220,0,0" VerticalAlignment="Top" Width="75" Click="btnRemoveStuff_Click"/>
+            <Label x:Name="lblDate" Content="Data:" HorizontalAlignment="Left" Margin="215,5,0,0" VerticalAlignment="Top"/>
+            <DatePicker x:Name="dpDate" Margin="255,5,5,0" VerticalAlignment="Top" Height="25" FontSize="14"/>
+            <DataGrid x:Name="dataGridAddStuff" Margin="0,250,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" AlternatingRowBackground="#FFE0E0E0" FontSize="14" Cursor="Hand" HeadersVisibility="Column">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Produto" Binding="{Binding Produto.DescricaoProduto}"/>
+                    <DataGridTextColumn Header="Qtde" Binding="{Binding QuantidadeComprada}"/>
+                    <DataGridTextColumn Header="Un" Binding="{Binding Produto.Unidade.SiglaUnidade}"/>
+                    <DataGridTextColumn Header="Valor Unitário" Binding="{Binding ValorUnitario}"/>
+                    <DataGridTextColumn Header="Valor Total" Binding="{Binding ValorTotal}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="dataGridInvoice" Margin="0,0,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" SelectionChanged="dataGridInvoice_SelectionChanged" AlternatingRowBackground="#FFE0E0E0" Cursor="Hand" HeadersVisibility="Column" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Numero da Nota" Binding="{Binding NumeroNota}"/>
+                    <DataGridTextColumn Header="Data" Binding="{Binding DataNota, StringFormat=\{0:dd/MM/yyyy\}}"/>
+                    <DataGridTextColumn Header="Fornecedor" Binding="{Binding Fornecedor.Pessoa.NomePessoa}"/>
+                    <DataGridTextColumn Header="Filial" Binding="{Binding Filial.Pessoa.NomePessoa}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+    </Grid>
+</Window>

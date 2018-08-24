@@ -1,0 +1,15 @@
+﻿<Window x:Class="MariEtFemme.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MariEtFemme.View"
+        mc:Ignorable="d"
+        Title="Mari Et Femme - Salão e Barbearia" Height="840" Width="1240" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="1">
+    <Grid>
+        <Grid x:Name="gridLogin" Height="325" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <local:Login x:Name="loginPage" Visibility="Visible" LoginSuccess="OnLoginSuccess" ExitSuccess="OnExitSuccess"/>
+        </Grid>
+        <Grid x:Name="master" Margin="0,0,0,0"/>
+    </Grid>
+</Window>

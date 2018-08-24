@@ -1,0 +1,13 @@
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\bin\Debug\MariEtFemme.BLL.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\bin\Debug\MariEtFemme.BLL.pdb
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\bin\Debug\MariEtFemme.DAL.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\bin\Debug\MariEtFemme.DTO.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\bin\Debug\MariEtFemme.Tools.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\bin\Debug\MySql.Data.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\bin\Debug\MariEtFemme.DAL.pdb
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\bin\Debug\MariEtFemme.DTO.pdb
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\bin\Debug\MariEtFemme.Tools.pdb
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\bin\Debug\MySql.Data.xml
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\obj\Debug\MariEtFemme.BLL.csprojResolveAssemblyReference.cache
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\obj\Debug\MariEtFemme.BLL.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.BLL\obj\Debug\MariEtFemme.BLL.pdb

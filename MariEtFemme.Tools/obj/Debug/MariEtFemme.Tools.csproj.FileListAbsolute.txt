@@ -1,0 +1,5 @@
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.Tools\bin\Debug\MariEtFemme.Tools.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.Tools\bin\Debug\MariEtFemme.Tools.pdb
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.Tools\obj\Debug\MariEtFemme.Tools.csprojResolveAssemblyReference.cache
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.Tools\obj\Debug\MariEtFemme.Tools.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.Tools\obj\Debug\MariEtFemme.Tools.pdb

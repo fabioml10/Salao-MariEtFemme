@@ -1,0 +1,65 @@
+﻿<Window x:Class="MariEtFemme.View.ServiceTool"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MariEtFemme.View"
+        mc:Ignorable="d"
+        Title="Gerenciamento de Serviços" Height="500" Width="400" WindowStyle="None" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" BorderBrush="LightGray" BorderThickness="1" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FFE2DEDE"/>
+            <GradientStop Color="#FF666666" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid Margin="0,0,0,0">
+
+        <Grid Margin="0,50,0,0" HorizontalAlignment="Right" Width="80">
+            <Button x:Name="btnCancel" Style="{StaticResource FlatCancelButton}" Margin="0,80,10,0" VerticalAlignment="Top" Height="60" Click="btnCancel_Click" HorizontalAlignment="Right" Width="60" ToolTip="Cancela a ação" TabIndex="4" Cursor="Hand"/>
+            <Button x:Name="btnApply" Style="{StaticResource FlatApplyButton}" Margin="0,0,10,0" Click="btnApply_Click" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Width="60" ToolTip="Confimar a ação" TabIndex="5" Cursor="Hand"/>
+            <Button x:Name="btnRemove" Style="{StaticResource FlatRemoveButton}" Margin="0,160,10,0" Visibility="Visible" IsEnabled="False" Click="btnRemove_Click" TabIndex="4" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Top" ToolTip="Remove o usuário selecionado" Cursor="Hand"/>
+            <Button x:Name="btnEdit" Style="{StaticResource FlatEditButton}" Margin="0,80,10,0" Visibility="Visible" IsEnabled="False" Click="btnEdit_Click" TabIndex="3" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Top" ToolTip="Edita o usuário selecionado" Cursor="Hand"/>
+            <Button x:Name="btnNew" Style="{StaticResource FlatAddButton}" Margin="0,0,10,0" Click="btnNew_Click" TabIndex="2" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Top" ToolTip="Adiciona novo usuário" Cursor="Hand"/>
+        </Grid>
+
+        <Grid Margin="0,0,0,0" Height="50" VerticalAlignment="Top">
+            <Button Style="{StaticResource FlatCloseButton}" x:Name="btnClose" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" Width="20" ToolTip="Fechar" TabIndex="4" Cursor="Hand" Click="btnClose_Click" Opacity="0.8"/>
+            <Label x:Name="lblTitle" Content="Gerenciamento de Serviços" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Opacity="0.8"/>
+        </Grid>
+
+        <Grid Margin="2,50,80,10" Background="White">
+            <Button x:Name="btnEditStuff" Content="Editar" Margin="0,140,160,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="btnEditStuff_Click"/>
+            <Button x:Name="btnAddFeedStock" Content="Adicionar" Margin="0,140,80,0" VerticalAlignment="Top" Click="btnAddFeedStock_Click" HorizontalAlignment="Right" Width="75" Cursor="Hand"/>
+            <Button x:Name="btnRemoveFeedStock" Content="Remover" Margin="0,140,240,0" VerticalAlignment="Top" Click="btnRemoveFeedStock_Click" ToolTip="Remove o Produto Selecionado Abaixo." HorizontalAlignment="Right" Width="75"/>
+            <DataGrid x:Name="dataGridAddStuff" Margin="0,170,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" AlternatingRowBackground="#FFE0E0E0" Cursor="Hand" FontSize="14">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Produto" Binding="{Binding Produto.DescricaoProduto}"/>
+                    <DataGridTextColumn Header="Quantidade Utilizada" Binding="{Binding Produto.Consumo}"/>
+                    <DataGridTextColumn Header="Unidade" Binding="{Binding Produto.Unidade.SiglaUnidade}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label x:Name="lblService" Content="Serviço:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0"/>
+            <TextBox x:Name="txtServiço" Height="25" Margin="125,5,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" MaxLength="50" MaxLines="1"/>
+            <Label x:Name="lblStuff" Content="Produtos Utilizados:" Margin="0,55,0,0" HorizontalAlignment="Left" Width="116" Height="26" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cbStuff" Margin="125,55,5,0" Height="25" VerticalAlignment="Top" SelectionChanged="cbStuff_SelectionChanged" FontSize="14"/>
+            <Label x:Name="lblQty" Content="Quantidade Utilizada:" HorizontalAlignment="Left" Margin="0,105,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtQty" Height="25" Margin="125,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" MaxLines="1" MaxLength="15" TextChanged="txtQty_TextChanged" HorizontalAlignment="Left" Width="90"/>
+            <Label x:Name="lblUn" Margin="215,100,80,0" VerticalAlignment="Top" Height="25" Content=""/>
+            <DataGrid x:Name="dataGridStuff" Margin="0,225,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" Cursor="Hand" AlternatingRowBackground="#FFE0E0E0" HeadersVisibility="Column" FontSize="14" d:IsHidden="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Produto" Binding="{Binding Produto.DescricaoProduto}"/>
+                    <DataGridTextColumn Header="Qtde Consumida" Binding="{Binding Produto.Consumo}"/>
+                    <DataGridTextColumn Header="Unidade" Binding="{Binding Produto.Unidade.SiglaUnidade}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="dataGridService" Margin="0,0,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" SelectionChanged="dataGridService_SelectionChanged" AlternatingRowBackground="#FFE0E0E0" Height="215" VerticalAlignment="Top" HeadersVisibility="Column" FontSize="14" d:IsHidden="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Serviço" Binding="{Binding DescricaoServico}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Frame Margin="0,0,0,0" BorderThickness="1" BorderBrush="Gray" Visibility="Visible" d:IsHidden="True"/>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,8 @@
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DAL\bin\Debug\MariEtFemme.DAL.dll.config
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DAL\bin\Debug\MariEtFemme.DAL.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DAL\bin\Debug\MariEtFemme.DAL.pdb
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DAL\bin\Debug\MySql.Data.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DAL\bin\Debug\MySql.Data.xml
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DAL\obj\Debug\MariEtFemme.DAL.csprojResolveAssemblyReference.cache
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DAL\obj\Debug\MariEtFemme.DAL.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DAL\obj\Debug\MariEtFemme.DAL.pdb

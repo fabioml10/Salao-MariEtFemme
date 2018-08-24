@@ -1,0 +1,1955 @@
+﻿<Application x:Class="MariEtFemme.View.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MariEtFemme.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatAddButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/cadastro/addGeneric01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/addGeneric01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/addGeneric01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/addGeneric01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/addGeneric01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatEditButton">
+            
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/cadastro/editGeneric01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/editGeneric01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/editGeneric01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/editGeneric01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/editGeneric01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatRemoveButton">
+            
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/cadastro/deleteGeneric01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/deleteGeneric01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/deleteGeneric01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/deleteGeneric01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/cadastro/deleteGeneric01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>                
+            </Setter>
+            
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatApplyButton">
+
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/navegacao/apply01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/apply01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/apply01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/apply01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/apply01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatCancelButton">
+
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/navegacao/cancel01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/cancel01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/cancel01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/cancel01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/cancel01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatCloseButton">
+
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/navegacao/cancel01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Width="30" Height="30"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/cancel01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"  Width="30" Height="30"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/cancel01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"  Width="30" Height="30"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/cancel01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"  Width="30" Height="30"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/navegacao/cancel01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"  Width="30" Height="30" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatUserButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/user01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/user01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/user01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/user01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/user01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatClientButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/clients01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/clients01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/clients01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/clients01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/clients01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatAttendanceButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/attendance01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/attendance01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/attendance01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/attendance01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/attendance01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatServiceButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/servicos02D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/servicos02L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/servicos02L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/servicos02D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/servicos02D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatStuffButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/materiaprima01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/materiaprima01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/materiaprima01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/materiaprima01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/materiaprima01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatProviderButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/provider01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/provider01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/provider01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/provider01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/provider01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatStockButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/estoque01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/estoque01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/estoque01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/estoque01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/estoque01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatPersonalButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/pessoal01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/pessoal01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/pessoal01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/pessoal01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/pessoal01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatFilialButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/filial01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/filial01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/filial01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/filial01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/filial01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatReportsButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/relatorios01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/relatorios01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/relatorios01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/relatorios01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/relatorios01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatOptionsButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/opcoes01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/opcoes01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/opcoes01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/opcoes01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/opcoes01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" x:Key="FlatLogoffButton">
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Source="img/principal/desligar01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Name="Border">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/desligar01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/desligar01L.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFE2DEDE"/>
+                                            <GradientStop Color="#FF666666" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/desligar01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF666666"/>
+                                            <GradientStop Color="#FFE2DEDE" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1"/>
+
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+
+                                <Setter TargetName="Border" Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Gray"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="false">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="img/principal/desligar01D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width="80" Opacity="0.5"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Application.Resources>
+</Application>

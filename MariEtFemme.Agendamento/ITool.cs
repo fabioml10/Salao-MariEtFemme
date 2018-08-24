@@ -1,0 +1,19 @@
+﻿using System.Windows.Forms;
+
+namespace MariEtFemme.Agendamento
+{
+    public interface ITool
+    {
+        DayView DayView
+        {
+            get;
+            set;
+        }
+
+        void Reset();
+
+        void MouseMove(MouseEventArgs e);
+        void MouseUp(MouseEventArgs e);
+        void MouseDown(MouseEventArgs e);
+    }
+}

@@ -1,0 +1,4 @@
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DTO\bin\Debug\MariEtFemme.DTO.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DTO\bin\Debug\MariEtFemme.DTO.pdb
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DTO\obj\Debug\MariEtFemme.DTO.dll
+D:\FABIO\Programação\MariEtFemme\MariEtFemme.DTO\obj\Debug\MariEtFemme.DTO.pdb

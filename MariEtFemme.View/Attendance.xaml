@@ -1,0 +1,90 @@
+﻿<Window x:Class="MariEtFemme.View.Attendance"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MariEtFemme.View"
+        mc:Ignorable="d"
+        Title="Atendimento" Height="800" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded" BorderBrush="LightGray" BorderThickness="1">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FFE2DEDE"/>
+            <GradientStop Color="#FF666666" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid Margin="0,0,0,0">
+
+        <Grid Margin="0,50,0,0" HorizontalAlignment="Right" Width="80">
+            <Button x:Name="btnCancel" Style="{StaticResource FlatCancelButton}" Margin="0,80,10,0" VerticalAlignment="Top" Height="60" Click="btnCancel_Click" HorizontalAlignment="Right" Width="60" ToolTip="Cancela a ação" TabIndex="4" Cursor="Hand"/>
+            <Button x:Name="btnApply" Style="{StaticResource FlatApplyButton}" Margin="0,0,10,0" Click="btnApply_Click" Height="60" VerticalAlignment="Top" HorizontalAlignment="Right" Width="60" ToolTip="Confimar a ação" TabIndex="5" Cursor="Hand"/>
+            <Button x:Name="btnRemove" Style="{StaticResource FlatRemoveButton}" Margin="0,160,10,0" Visibility="Visible" IsEnabled="False" Click="btnRemove_Click" TabIndex="4" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Top" ToolTip="Remove o usuário selecionado" Cursor="Hand"/>
+            <Button x:Name="btnEdit" Style="{StaticResource FlatEditButton}" Margin="0,80,10,0" Visibility="Visible" IsEnabled="False" Click="btnEdit_Click" TabIndex="3" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Top" ToolTip="Edita o usuário selecionado" Cursor="Hand"/>
+            <Button x:Name="btnNew" Style="{StaticResource FlatAddButton}" Margin="0,0,10,0" Click="btnNew_Click" TabIndex="2" HorizontalAlignment="Right" Width="60" Height="60" VerticalAlignment="Top" ToolTip="Adiciona novo usuário" Cursor="Hand"/>
+        </Grid>
+
+        <Grid Margin="0,0,0,0" Height="50" VerticalAlignment="Top">
+            <Button Style="{StaticResource FlatCloseButton}" x:Name="btnClose" VerticalAlignment="Top" Height="20" HorizontalAlignment="Right" Width="20" ToolTip="Fechar" TabIndex="4" Cursor="Hand" Click="btnClose_Click" Opacity="0.8"/>
+            <Label x:Name="lblTitle" Content="Gerenciamento de Atendimentos" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Opacity="0.8"/>
+        </Grid>
+
+        <Grid Margin="2,50,80,10" Background="White">
+            <Label x:Name="lblDate" Content="Data:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0"/>
+            <DatePicker x:Name="dpDate" Margin="80,5,5,0" VerticalAlignment="Top" Height="25" FontSize="14"/>
+            <Label x:Name="lblClient" Content="Cliente:" HorizontalAlignment="Left" Margin="0,55,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblClientName" Content="" Margin="80,55,55,0" VerticalAlignment="Top" Height="25" FontSize="14"/>
+            <Button x:Name="btnSearchClient" Margin="0,55,5,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="40" Height="25" Click="btnSearchClient_Click">
+                <Image Source="img/navegacao/magnify D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Width="40" Height="40"/>
+            </Button>
+            <Label x:Name="lblEmployee" Content="Funcionário:" HorizontalAlignment="Left" Margin="0,105,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblEmployeeName" Content="" Margin="80,105,55,0" VerticalAlignment="Top" Height="25" FontSize="14"/>
+            <Button x:Name="btnSearchEmployee" Margin="0,105,5,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="40" Height="25" Click="btnSearchEmployee_Click">
+                <Image Source="img/navegacao/magnify D.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Width="40" Height="40"/>
+            </Button>
+            <Button x:Name="btnSearchService" Content="Adicionar" Margin="0,155,5,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Height="25" Click="btnSearchService_Click"/>
+            <Button x:Name="btnRemoveService" Content="Remover" Margin="0,155,90,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Height="25" Click="btnRemoveService_Click"/>
+            <Label x:Name="lblServices" Content="Serviços:" HorizontalAlignment="Left" Margin="0,155,0,0" VerticalAlignment="Top"/>
+            <DataGrid x:Name="dataGridService" Margin="0,185,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" AlternatingRowBackground="#FFE0E0E0" AlternationCount="2" Cursor="Hand" FontSize="14" Height="120" VerticalAlignment="Top" SelectionChanged="dataGridService_SelectionChanged" HeadersVisibility="Column">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Serviços" Binding="{Binding Servico.DescricaoServico}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label x:Name="lblFeedStock" Content="Produtos:" HorizontalAlignment="Left" Margin="0,310,0,0" Height="26" VerticalAlignment="Top"/>
+            <DataGrid x:Name="dataGridStuff" Margin="0,335,0,295" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" AlternatingRowBackground="#FFE0E0E0" AlternationCount="2" Cursor="Hand" FontSize="14" HeadersVisibility="Column">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Produtos" Binding="{Binding Produto.DescricaoProduto}"/>
+                    <DataGridTextColumn Header="Quantidade Consumida" Binding="{Binding Produto.Consumo}"/>
+                    <DataGridTextColumn Header="Unidade" Binding="{Binding Produto.Unidade.SiglaUnidade}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Label x:Name="lblObsAttend" Content="Observações Sobre o Atendimento:" HorizontalAlignment="Left" Margin="0,0,0,250" Height="26" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="txtObsAttend" Margin="0,0,5,140" TextWrapping="Wrap" MaxLines="5" Height="110" VerticalAlignment="Bottom" FontSize="14"/>
+            <Label x:Name="lblObsAttendClient" Content="Observações Pessoais:" HorizontalAlignment="Left" Margin="0,0,0,110" Height="26" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="txtlblObsPersonal" Margin="0,0,5,0" TextWrapping="Wrap" MaxLines="5" Height="110" VerticalAlignment="Bottom" FontSize="14" IsReadOnly="True"/>
+            <DataGrid x:Name="dataGridAddService" Margin="0,0,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" AlternatingRowBackground="#FFE0E0E0" AlternationCount="2" Cursor="Hand" FontSize="14" HeadersVisibility="Column" d:IsHidden="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Servico" Binding="{Binding DescricaoServico}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="dataGridAddClient" Margin="0,0,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" AlternatingRowBackground="#FFE0E0E0" AlternationCount="2" Cursor="Hand" FontSize="14" HeadersVisibility="Column" d:IsHidden="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Cliente" Binding="{Binding Pessoa.NomePessoa}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="dataGridAddEmployee" Margin="0,0,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" AlternatingRowBackground="#FFE0E0E0" AlternationCount="2" Cursor="Hand" FontSize="14" HeadersVisibility="Column" d:IsHidden="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Funcionário" Binding="{Binding Pessoa.NomePessoa}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid x:Name="dataGridAttendance" Margin="0,0,0,0" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True" AlternatingRowBackground="#FFE0E0E0" Cursor="Hand" FontSize="14" SelectionChanged="dataGridAttendance_SelectionChanged" HeadersVisibility="Column" d:IsHidden="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Data" Binding="{Binding DataAtendimento, StringFormat=\{0:dd/MM/yyyy\}}"/>
+                    <DataGridTextColumn Header="Cliente" Binding="{Binding Cliente.Pessoa.NomePessoa}"/>
+                    <DataGridTextColumn Header="Funcionário" Binding="{Binding Funcionario.Pessoa.NomePessoa}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Frame Margin="0,0,0,0" BorderThickness="1" BorderBrush="Gray" Visibility="Visible" d:IsHidden="True"/>
+        </Grid>
+
+    </Grid>
+</Window>
